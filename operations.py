@@ -1,6 +1,7 @@
 import customtkinter
 from create import creat_t
 from insert import insert_db
+from delete import delete
 def opreation_form(conn):
   customtkinter.set_appearance_mode("dark")
   customtkinter.set_default_color_theme("blue")
@@ -12,7 +13,8 @@ def opreation_form(conn):
 
   def click_insert():
       insert_db(conn)
-
+  def click_delet():
+      delete(conn)
   def create_db():
       pass
   create_button = customtkinter.CTkButton(app, text_color="#EED9C4",text='Create New Table', command=click_create, fg_color="green")
@@ -27,7 +29,7 @@ def opreation_form(conn):
   update_button.place(relx=0.5, rely=0.5, anchor="center")
 
 
-  delete_button = customtkinter.CTkButton(app,text_color="#EED9C4", text='Delete', command=create_db, fg_color="red")
+  delete_button = customtkinter.CTkButton(app,text_color="#EED9C4", text='Delete', command=click_delet, fg_color="red")
   delete_button.place(relx=0.5, rely=0.4,anchor="center")
 
 
@@ -38,5 +40,8 @@ def opreation_form(conn):
 
 
   app.mainloop()
+  
+  
+
   
   
