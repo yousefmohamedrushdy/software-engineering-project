@@ -39,7 +39,6 @@ def connect_to_database():
     
     except Exception as e:
         label1.configure(text="Invalid username or password")
-        print("Error:", e)
 
 connect_button = customtkinter.CTkButton(app, text="Connect", fg_color="green", command=connect_to_database)
 connect_button.place(relx=.5, rely=.4 ,anchor="center")
