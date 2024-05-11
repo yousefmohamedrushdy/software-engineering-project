@@ -1,5 +1,6 @@
 import customtkinter
 from create import creat_t
+from insert import insert_db
 def opreation_form(conn):
   customtkinter.set_appearance_mode("dark")
   customtkinter.set_default_color_theme("blue")
@@ -9,7 +10,8 @@ def opreation_form(conn):
   def click_create():
     creat_t(conn)
 
-
+  def click_insert():
+      insert_db(conn)
 
   def create_db():
       pass
@@ -17,7 +19,7 @@ def opreation_form(conn):
   create_button.place(relx=0.5, rely=0.2, anchor="center",)
 
 
-  insert_button = customtkinter.CTkButton(app, text_color="black",text='Insert', command=create_db, fg_color="Light blue")
+  insert_button = customtkinter.CTkButton(app, text_color="black",text='Insert', command=click_insert, fg_color="Light blue")
   insert_button.place(relx=0.5, rely=0.3, anchor="center")
 
 
